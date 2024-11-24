@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "c9754f5c-6a04-4610-a009-948e00616bf3",
+		"name": "RestaurantService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38189414",
+		"_collection_link": "https://aaa444-0988.postman.co/workspace/AAA-Workspace~0009ddef-549b-43a6-acbc-9b68d03a44bf/collection/38189414-c9754f5c-6a04-4610-a009-948e00616bf3?action=share&source=collection_link&creator=38189414"
+	},
+	"item": [
+		{
+			"name": "Restaurant",
+			"item": [
+				{
+					"name": "getRestaurantDetails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/restaurant?restaurantName=My Restaurant",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"restaurant"
+							],
+							"query": [
+								{
+									"key": "restaurantName",
+									"value": "My Restaurant"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRestaurantDetails",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"restaurantName\": \"My Restaurant\",\r\n    \"address\": \"test address\",\r\n    \"contactNumber\": 1234567899,\r\n    \"operationHours\": \"6AM - 12AM\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/restaurant/1/updateRestaurant"
+					},
+					"response": []
+				},
+				{
+					"name": "updateRestaurantOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 1,\r\n    \"restaurantId\" : 1,\r\n    \"orderstatus\" : \"ACCEPTED_BY_RESTAURANT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/restaurant/1/updateRestaurantOrder"
+					},
+					"response": []
+				},
+				{
+					"name": "getRestaurantByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}/restaurant/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MenuItemFolder",
+			"item": [
+				{
+					"name": "updateMenuItem",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{baseURL}}/menuItem/1/updatemenuitem"
+					},
+					"response": []
+				},
+				{
+					"name": "getMenuItem",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/menuItem/1"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
