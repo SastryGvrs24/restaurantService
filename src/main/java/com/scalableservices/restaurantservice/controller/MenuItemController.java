@@ -52,7 +52,7 @@ public class MenuItemController {
 
     @PostMapping("/{id}/updatemenuitem")
     @PreAuthorize("hasRole('restaurant')")
-    ResponseEntity addMenuItems(@PathVariable long id, @RequestBody MenuItemUpdateDto item) {
+    ResponseEntity updateMenuItems(@PathVariable long id, @RequestBody MenuItemUpdateDto item) {
         //authenticated user
         Optional<MenuItem> menuItem = menuItemRepository.findById(id);
 
@@ -63,7 +63,7 @@ public class MenuItemController {
 
             menuItemRepository.save(menuItem.get());
 
-            return ResponseEntity.ok().build();
+            return ResponseEntity.ok("{\"msg\" :Menu item has been successfully updated }");
         }
 
         return ResponseEntity.notFound().build();

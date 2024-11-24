@@ -13,7 +13,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Arrays;
 
 @SpringBootApplication
-//@EnableDiscoveryClient
 public class RestaurantserviceApplication implements CommandLineRunner {
 
 	@Autowired

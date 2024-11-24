@@ -73,6 +73,8 @@ public class RestaurantController {
             updateNonNullAttributes(restaurantUpdateDTO.getAddress(), restaurant.get()::setAddress);
             updateNonNullAttributes(restaurantUpdateDTO.getContactNumber(), restaurant.get()::setContactNumber);
             updateNonNullAttributes(restaurantUpdateDTO.getOperationHours(), restaurant.get()::setOperationHours);
+
+            restaurantRepository.save(restaurant.get());
             return ResponseEntity.ok("{msg : \"Restaurant details updated successfully\"}");
         }
 

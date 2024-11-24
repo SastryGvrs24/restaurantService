@@ -16,7 +16,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseURL}}/restaurant?restaurantName=My Restaurant",
+							"raw": "{{baseURL}}/restaurant?restaurantName=The Food Place",
 							"host": [
 								"{{baseURL}}"
 							],
@@ -26,10 +26,19 @@
 							"query": [
 								{
 									"key": "restaurantName",
-									"value": "My Restaurant"
+									"value": "The Food Place"
 								}
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRestaurantByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}/restaurant/1"
 					},
 					"response": []
 				},
@@ -40,7 +49,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"restaurantName\": \"My Restaurant\",\r\n    \"address\": \"test address\",\r\n    \"contactNumber\": 1234567899,\r\n    \"operationHours\": \"6AM - 12AM\"\r\n}",
+							"raw": "{\r\n    \"restaurantName\": \"My Restaurant\",\r\n    \"address\": \"test address\",\r\n    \"contactNumber\": 1234567890,\r\n    \"operationHours\": \"6AM - 12AM\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -68,15 +77,6 @@
 						"url": "{{baseURL}}/restaurant/1/updateRestaurantOrder"
 					},
 					"response": []
-				},
-				{
-					"name": "getRestaurantByID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}/restaurant/1"
-					},
-					"response": []
 				}
 			]
 		},
@@ -88,6 +88,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"itemName\": \"Pasta\",\r\n    \"price\": 12,\r\n    \"description\": \"tasty enhanced pasta\",\r\n    \"available\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "{{baseURL}}/menuItem/1/updatemenuitem"
 					},
 					"response": []
